@@ -40,7 +40,7 @@
     return(self);
 }
 
-- (void) play:withPan:(NSNumber*) pan
+- (void) play:(NSNumber*) pan
 {
     AVAudioPlayer * player = [voices objectAtIndex:playIndex];
     [player setCurrentTime:0.0];
