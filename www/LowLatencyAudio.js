@@ -34,8 +34,9 @@ module.exports  = {
         return cordova.exec(success, fail, "LowLatencyAudio", "preloadAudio", [id, assetPath, volume, voices]);
     },
 
-    play: function(id, success, fail) {
-        return cordova.exec(success, fail, "LowLatencyAudio", "play", [id]);
+    play: function(id, pan, success, fail) {
+        if (pan === undefined) pan = 0;
+        return cordova.exec(success, fail, "LowLatencyAudio", "play", [id, pan]);
     },
 
     stop: function(id, success, fail) {

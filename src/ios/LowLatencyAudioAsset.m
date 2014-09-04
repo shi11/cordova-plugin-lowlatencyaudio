@@ -40,11 +40,12 @@
     return(self);
 }
 
-- (void) play
+- (void) play:withPan:(NSNumber*) pan
 {
     AVAudioPlayer * player = [voices objectAtIndex:playIndex];
     [player setCurrentTime:0.0];
     player.numberOfLoops = 0;
+    player.pan = pan.floatValue;
     [player play];
     playIndex += 1;
     playIndex = playIndex % [voices count];

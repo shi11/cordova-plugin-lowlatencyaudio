@@ -146,6 +146,19 @@ NSString* RESTRICTED = @"ACTION RESTRICTED FOR FX AUDIO";
     NSString *callbackId = command.callbackId;
     NSArray* arguments = command.arguments;
     NSString *audioID = [arguments objectAtIndex:0];
+    NSNumber *pan = nil;
+
+    if ( [arguments count] > 1 ) {
+            pan = [arguments objectAtIndex:1];
+            if([pan isEqual:nil]) {
+                pan = [NSNumber numberWithFloat:0.0f];
+            }
+        } else {
+            pan = [NSNumber numberWithFloat:1.0f];
+        }
+
+        NSLog( @"pan - %@", pan.stringValue );
+
     
     //NSLog( @"play - %@", audioID );
     [self.commandDelegate runInBackground:^{
