@@ -27,7 +27,7 @@
 }
 
 -(id) initWithPath:(NSString*) path withVoices:(NSNumber*) numVoices withVolume:(NSNumber*) volume;
-- (void) play:withPan:(NSNumber*) pan;
+- (void) play:(NSNumber*) pan;
 - (void) stop;
 - (void) loop;
 - (void) unload;
