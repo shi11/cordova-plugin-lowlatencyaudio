@@ -166,7 +166,7 @@ NSString* RESTRICTED = @"ACTION RESTRICTED FOR FX AUDIO";
             NSObject* asset = [audioMapping objectForKey: audioID];
             if ([asset isKindOfClass:[LowLatencyAudioAsset class]]) {
                 LowLatencyAudioAsset *_asset = (LowLatencyAudioAsset*) asset;
-                [_asset play];
+                [_asset play:pan];
             } else if ( [asset isKindOfClass:[NSNumber class]] ) {
                 NSNumber *_asset = (NSNumber*) asset;
                 AudioServicesPlaySystemSound([_asset intValue]);
