@@ -56,7 +56,9 @@
     [player setCurrentTime:0.0];
     player.numberOfLoops = 0;
     player.pan = pan.floatValue;
-    [player play];
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [player play];
+        });
     playIndex += 1;
     playIndex = playIndex % [voices count];
 }
